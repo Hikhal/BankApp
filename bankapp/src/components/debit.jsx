@@ -63,6 +63,7 @@ export default function Debit(props) {
   // Return JSX for rendering
   return (
     <div className="debitContainer">
+      <h1>I AM DEBITS</h1>
       <form onSubmit={handleSubmit} className="forms">
         <div className="innerContainer">
         <input 
