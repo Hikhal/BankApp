@@ -165,10 +165,9 @@ h2 {
   justify-content: center;
   align-items: center;
   height: 60vh;
-  /* Set the desired width */
 }
 
 .resized-img {
-  width: 40%; /* Adjust the percentage value to reduce the width */
+  width: 40%; 
   height: auto;
 }
