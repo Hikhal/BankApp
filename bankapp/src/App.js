@@ -7,6 +7,7 @@ import UserProfile from "./components/userProfile";
 import Credit from "./components/credit";
 import Debit from "./components/debit";
 import './App.css';
+import bankImage from "./bank-7515368_1280.png";
 
 
 function App() {
@@ -71,6 +72,10 @@ function App() {
             </li>
           </ul>
         </nav>
+        <div className="image-container">
+            <img src={bankImage} alt="Bank" className="resized-img" />
+        </div>
+
           {/* Routes */}
           <Routes>
             <Route path="/" element={<Home />} />

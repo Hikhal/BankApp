@@ -159,3 +159,16 @@ h2 {
 .value {
   flex-grow: 1;
 }
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  /* Set the desired width */
+}
+
+.resized-img {
+  width: 60%; /* Adjust the percentage value to reduce the width */
+  height: auto;
+}
