@@ -1,5 +1,5 @@
 body {
-  background-color: gray;
+  background-color: gainsboro;
 }
 
 .navbar {
@@ -47,6 +47,14 @@ body {
   border-radius: 5px;
 }
 
+.debitContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px double black;
+  border-radius: 5px;
+}
+
 .innerContainer {
   text-align: center;
 }
@@ -59,13 +67,14 @@ body {
   color: black;
   border-radius: 5px;
   padding: 10px 20px;
+  font-size: 16px;
 }
 
 button {
   background-color: #4caf50;
   color: black;
   border: none;
-  padding: 10px 20px;
+  padding: 1px 1px;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
@@ -78,7 +87,7 @@ button:hover {
 
 hr {
   border: none;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid rgb(6, 6, 6);
   margin: 10px 0;
 }
 
@@ -96,4 +105,35 @@ h2 {
   font-size: 24px;
   margin-bottom: 10px;
   text-align: center;
+}
+
+.homeContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.featuresSection {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+}
+
+.feature {
+  width: 30%;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  text-align: center;
+  align-items: center;
+}
+
+.feature h3 {
+  margin-bottom: 10px;
+}
+
+.feature p {
+  color: #777;
 }
