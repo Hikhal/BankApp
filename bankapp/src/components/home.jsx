@@ -3,7 +3,7 @@ export default function Home() {
     // Homepage was looking empty hence the page filled out with ordinary bank info.
   return (
     <div className="homeContainer">
-      <h2>Welcome to Bank of Hamza</h2>
+      <h2>Hello Bankers</h2>
       <p>
         We are committed to providing exceptional banking services with a focus
         on security, convenience, and personalized experiences. Explore our
