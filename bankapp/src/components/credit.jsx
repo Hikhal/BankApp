@@ -58,7 +58,6 @@ export default function Credit(props) {
   // Return JSX for rendering
   return (
     <div className="creditContainer">
-      <h1>I AM CREDITS</h1>
       <form onSubmit={handleSubmit} className="forms">
         <div className="innerContainer">
         <input 
