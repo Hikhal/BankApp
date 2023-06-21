@@ -74,8 +74,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/userProfile" element={<UserProfile bal1 = {bal}></UserProfile>} />
-            <Route path="/credit" element={<Credit credit = {cred} bal2 = {bal}></Credit>} />
-            <Route path="/debit" element={<Debit debit = {debitAmount}></Debit>} />
+            <Route path="/credit" element={<Credit credit = {cred} debit = {debitAmount}></Credit>} />
+            <Route path="/debit" element={<Debit debit = {debitAmount} credit = {cred}></Debit>} />
           </Routes>
         </div>
       </Router>

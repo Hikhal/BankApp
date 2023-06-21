@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 export default function Credit(props) {
   const [description, setDescription] = useState("");
   const [amount, setAmount] = useState("");
   const [submissions, setSubmissions] = useState([]);
   const [totalAmount, setTotalAmount] = useState(props.credit);
+  const [balance, setBalance] = useState(0)
 
+  
   useEffect(() => {
     setTotalAmount(
       props.credit +
@@ -13,7 +14,8 @@ export default function Credit(props) {
           return acc + parseFloat(curr.amount);
         }, 0)
     );
-  }, [props.credit, submissions]);
+    setBalance(props.debit - totalAmount);
+  }, [props.credit, submissions, props.debit, totalAmount]);
 
   function addCredit(event) {
     setDescription(event.target.value);
@@ -42,7 +44,9 @@ export default function Credit(props) {
   }
 
   return (
+
     <div className="creditContainer">
+        <h1>I AM CREDITS</h1>
       <form onSubmit={handleSubmit} className="forms">
         <div className="innerContainer">
         <input 
@@ -60,7 +64,8 @@ export default function Credit(props) {
         <button type="submit">Submit</button>
         </div>
       </form>
-
+    
+      <h3>Account Balance: ${balance}</h3>
       <h3>Total Credit: ${totalAmount}</h3>
 
       <div>
