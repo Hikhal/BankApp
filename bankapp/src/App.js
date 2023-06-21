@@ -14,7 +14,7 @@ function App() {
   const [currDebit, setCurrDebit] = useState(0)
     const api = 'https://bank-of-react-b745wfs0u-ajlapid718.vercel.app/credits';
 
-    // function that fetches the credit amount.
+   // UseEffect that fetches the credit amount from the API and updates state.
     useEffect(() => {
         async function getCredits() {
             try {
@@ -28,7 +28,7 @@ function App() {
         getCredits();
     }, [currCred]);
 
-    // function that fetches the debit amount from the api
+    // UseEffect that fetches the debit amount from the API and updates state
     const api1 = 'https://bank-of-react-b745wfs0u-ajlapid718.vercel.app/debits'
     useEffect(()=>{
         async function setDebit(){
@@ -43,6 +43,7 @@ function App() {
         setDebit()
     },[])
 
+    // Function that calculates the balance by subtracting credits from debits
     function balance(debit, credits) {
         return debit - credits;
     }
@@ -74,8 +75,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/userProfile" element={<UserProfile bal1 = {bal}></UserProfile>} />
-            <Route path="/credit" element={<Credit credit = {cred} bal2 = {bal}></Credit>} />
-            <Route path="/debit" element={<Debit debit = {debitAmount}></Debit>} />
+            <Route path="/credit" element={<Credit credit = {cred} debit = {debitAmount}></Credit>} />
+            <Route path="/debit" element={<Debit debit = {debitAmount} credit = {cred}></Debit>} />
           </Routes>
         </div>
       </Router>
