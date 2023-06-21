@@ -1,9 +1,11 @@
-export default function Home(){
-    return(
-        <>
-        <h1> Home </h1>
-        <h2>Welcome to Bank of Hamza</h2>
-        </>
-    )
-} 
-   
+import React from "react";
+
+
+export default function Home() {
+  return (
+    <>
+      <h2>Welcome to Bank of Hamza</h2>
+    </>
+  );
+}
+

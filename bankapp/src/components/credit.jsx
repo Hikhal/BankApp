@@ -1,45 +1,51 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 export default function Credit(props) {
   const [description, setDescription] = useState("");
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState("");
   const [submissions, setSubmissions] = useState([]);
+  const [totalAmount, setTotalAmount] = useState(props.credit);
+
+  useEffect(() => {
+    setTotalAmount(
+      props.credit +
+        submissions.reduce((acc, curr) => {
+          return acc + parseFloat(curr.amount);
+        }, 0)
+    );
+  }, [props.credit, submissions]);
 
   function addCredit(event) {
     setDescription(event.target.value);
   }
 
   function addAmount(event) {
-    setAmount(event.target.value);
+    const value = event.target.value;
+    setAmount(value === "" ? "" : parseFloat(value));
   }
 
   function handleSubmit(event) {
     event.preventDefault();
 
-    // Get the current date
     const currentDate = new Date().toLocaleDateString();
 
-    // Create a new submission object with the credit information and date
     const newSubmission = {
       description,
       amount,
       date: currentDate,
     };
 
-    // Add the new submission to the submissions array
     setSubmissions([...submissions, newSubmission]);
 
-    // Clear the input fields
     setDescription("");
-    setAmount(0);
+    setAmount("");
   }
 
   return (
-    <div>
-
-        <title>Credits</title>
-      <form onSubmit={handleSubmit}>
-        <input
+    <div className="creditContainer">
+      <form onSubmit={handleSubmit} className="forms">
+        <div className="innerContainer">
+        <input 
           type="text"
           value={description}
           placeholder="description"
@@ -52,16 +58,17 @@ export default function Credit(props) {
           onChange={addAmount}
         />
         <button type="submit">Submit</button>
+        </div>
       </form>
 
+      <h3>Total Credit: ${totalAmount}</h3>
 
       <div>
-        {/* Display the submissions */}
         {submissions.map((submission, index) => (
           <div key={index}>
-            <p>{submission.date}</p>
-            <p>Description: {submission.description}</p>
-            <p>Amount: {submission.amount}</p>
+            <p>
+              Description: {submission.description} &nbsp;&nbsp; Amount: ${submission.amount} &nbsp;&nbsp;{submission.date}
+            </p>
             <hr />
           </div>
         ))}

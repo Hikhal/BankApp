@@ -26,7 +26,7 @@ function App() {
         }
 
         getCredits();
-    }, []);
+    }, [currCred]);
 
     // function that fetches the debit amount from the api
     const api1 = 'https://bank-of-react-b745wfs0u-ajlapid718.vercel.app/debits'
