@@ -164,11 +164,11 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: 60vh;
   /* Set the desired width */
 }
 
 .resized-img {
-  width: 60%; /* Adjust the percentage value to reduce the width */
+  width: 40%; /* Adjust the percentage value to reduce the width */
   height: auto;
 }

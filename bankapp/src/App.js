@@ -72,10 +72,6 @@ function App() {
             </li>
           </ul>
         </nav>
-        <div className="image-container">
-            <img src={bankImage} alt="Bank" className="resized-img" />
-        </div>
-
           {/* Routes */}
           <Routes>
             <Route path="/" element={<Home />} />
@@ -83,6 +79,10 @@ function App() {
             <Route path="/credit" element={<Credit credit = {cred} debit = {debitAmount}></Credit>} />
             <Route path="/debit" element={<Debit debit = {debitAmount} credit = {cred}></Debit>} />
           </Routes>
+        </div>
+
+        <div className="image-container">
+            <img src={bankImage} alt="Bank" className="resized-img" />
         </div>
       </Router>
     );
